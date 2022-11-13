@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage">
+
+    <Grid RowDefinitions="Auto, *">
+        <RefreshView>
+            <CollectionView WidthRequest="400"
+                        Grid.Row="1"
+                        BackgroundColor="DarkBlue"
+                        ItemsSource="{Binding Numbers}"
+                        >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout 
+                                Orientation="Vertical"
+                                Span="2"
+                                VerticalItemSpacing="2"
+                                HorizontalItemSpacing="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid WidthRequest="150" HeightRequest="100" BackgroundColor="Purple">
+                        <Label Text="{Binding }" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </Grid>
+</ContentPage>
